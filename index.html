@@ -1305,7 +1305,7 @@ button:hover{
 <!-- ================= 3D SECRET MODE ================= -->
 <div id="secret3d">
     <div class="secret-text">A BCDE GHF</div>
-	<a href='#' onclick='hideit()'>X</a>
+	<a href='#' onclick='window.location.reload();'>X</a>
 	<br>
 </div>
 <audio id="birthdayMusic" loop>
@@ -1370,9 +1370,12 @@ button:hover{
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <script>
 
-function hideit() {
-    document.getElementById("secret3d").classList.remove("active");
-}
+document.getElementById("secret3d")
+.addEventListener("click", function(e){
+    if(!e.target.closest(".secret-text")){
+        this.classList.remove("active");
+    }
+});
 
 document.addEventListener(
     "mousemove",
