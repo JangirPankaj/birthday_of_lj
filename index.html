@@ -1199,18 +1199,6 @@ button:hover{
     scale(.4)
     translateY(100px);
 }
-
-#txt,
-#person{
-    position:absolute;
-    text-align:center;
-    width:100%;
-}
-
-#txt{
-    margin-bottom: 200px;
-}
-
 </style>
 </head>
 
@@ -1231,6 +1219,8 @@ button:hover{
 		<div id="typedLetter"></div>
 	</div>
 </div>
+
+
 
 <div id="lockScreen">
     <div class="unlock-card">
@@ -1286,7 +1276,6 @@ button:hover{
 <span style="color:#CAFFBF">a</span>
 <span style="color:#9BF6FF">y</span>
 </h1>
-
 <h1 id='person'> TESTER </h1>
 <canvas id="personCanvas"></canvas>
 
@@ -1716,20 +1705,7 @@ document.getElementById("closeVideo")
     .style.display = "none";
 });
 
-document.getElementById("videoModal")
-.addEventListener("click", function(e){
 
-    if(!e.target.closest(".video-box")){
-
-        const video =
-        document.getElementById("birthdayVideo");
-
-        video.pause();
-        video.currentTime = 0;
-
-        this.style.display = "none";
-    }
-});
 
 const CORRECT_PASSWORD = "10061991";
 
