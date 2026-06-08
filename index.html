@@ -1199,6 +1199,151 @@ button:hover{
     scale(.4)
     translateY(100px);
 }
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media screen and (max-width:768px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    h1#txt{
+        font-size:3rem !important;
+        line-height:1.1;
+        padding:0 15px;
+    }
+
+    .unlock-card{
+        width:95vw;
+        padding:20px;
+        transform:scale(1);
+    }
+
+    .birthday-title{
+        font-size:28px;
+    }
+
+    .subtitle{
+        font-size:14px;
+    }
+
+    .input-wrap input{
+        height:50px;
+        font-size:16px;
+        padding-left:60px;
+    }
+
+    #unlockBtn{
+        height:50px;
+        font-size:17px;
+    }
+
+    .buttons{
+        gap:8px;
+        padding:10px;
+        bottom:10px;
+        max-height:35vh;
+        overflow-y:auto;
+    }
+
+    .buttons button{
+        font-size:13px;
+        padding:10px 14px;
+        min-width:110px;
+    }
+
+    .video-box{
+        width:95vw;
+        height:260px;
+    }
+
+    .secret-box{
+        width:90vw;
+        padding:20px;
+    }
+
+    .secret-box h2{
+        font-size:22px;
+    }
+
+    .secret-buttons{
+        flex-direction:column;
+    }
+
+    .secret-buttons button{
+        width:100%;
+    }
+
+    .letter-card{
+        width:92vw;
+        padding:20px;
+    }
+
+    .letter-card h2{
+        font-size:22px;
+    }
+
+    #typedLetter{
+        font-size:15px;
+        line-height:1.6;
+    }
+
+    .envelope{
+        width:140px;
+        height:100px;
+        font-size:50px;
+    }
+
+    .final-message{
+        font-size:32px;
+        max-width:90%;
+    }
+
+    .planet{
+        width:80px;
+        height:80px;
+        top:20px;
+        right:20px;
+    }
+
+    .planet::before{
+        width:110px;
+        left:-15px;
+        top:30px;
+    }
+}
+
+/* Extra Small Devices */
+
+@media screen and (max-width:480px){
+
+    h1#txt{
+        font-size:2.4rem !important;
+    }
+
+    .birthday-title{
+        font-size:24px;
+    }
+
+    .buttons button{
+        width:calc(50% - 8px);
+        min-width:auto;
+    }
+
+    .video-box{
+        height:220px;
+    }
+
+    .final-message{
+        font-size:26px;
+    }
+}
+
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+}
 </style>
 </head>
 
@@ -1705,7 +1850,20 @@ document.getElementById("closeVideo")
     .style.display = "none";
 });
 
+document.getElementById("videoModal")
+.addEventListener("click", function(e){
 
+    if(!e.target.closest(".video-box")){
+
+        const video =
+        document.getElementById("birthdayVideo");
+
+        video.pause();
+        video.currentTime = 0;
+
+        this.style.display = "none";
+    }
+});
 
 const CORRECT_PASSWORD = "10061991";
 
